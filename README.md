@@ -233,7 +233,7 @@ I skipped writing test for this project. I might do it for the proper backend Gr
 
 It was being tested on IE 11, Chrome and Firefox. For Safari, there are some minor alignment issues.
 
-## Author: Trung Vo ✍️
+## Author: Tuan Nguyen✍️
 
 - A young and passionate front-end engineer. Working with Angular and TypeScript. Like photography, running, cooking, and reading books.
 - Personal blog: https://trungk18.com/
