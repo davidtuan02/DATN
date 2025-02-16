@@ -6,13 +6,13 @@ const routes: Routes = [
     path: 'project',
     loadChildren: () => import('./project/project.module').then((m) => m.ProjectModule)
   },
-  {
-    path: 'wip',
-    loadChildren: () =>
-      import('./work-in-progress/work-in-progress.module').then(
-        (m) => m.WorkInProgressModule
-      )
-  },
+  // {
+  //   path: 'wip',
+  //   loadChildren: () =>
+  //     import('./work-in-progress/work-in-progress.module').then(
+  //       (m) => m.WorkInProgressModule
+  //     )
+  // },
   {
     path: '',
     redirectTo: 'project',
