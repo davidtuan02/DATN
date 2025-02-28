@@ -7,6 +7,8 @@ import { ButtonComponent } from './button/button.component';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AvatarComponent } from './avatar/avatar.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { ActionAvatarComponent } from './action-avatar/avatar.component';
 
 const JiraControlComponents = [
   SvgDefinitionsComponent,
@@ -14,11 +16,12 @@ const JiraControlComponents = [
   BreadcrumbsComponent,
   ButtonComponent,
   InputComponent,
-  AvatarComponent
+  AvatarComponent,
+  ActionAvatarComponent
 ];
 @NgModule({
   declarations: JiraControlComponents,
   exports: JiraControlComponents,
-  imports: [CommonModule, ReactiveFormsModule]
+  imports: [CommonModule, ReactiveFormsModule, NzDropDownModule]
 })
 export class JiraControlModule {}
