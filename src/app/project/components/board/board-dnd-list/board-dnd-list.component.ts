@@ -1,27 +1,25 @@
+import { Component, Input, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { IssueStatus, IssueStatusDisplay, JIssue } from '@trungk18/interface/issue';
-import { FilterState } from '@trungk18/project/state/filter/filter.store';
-import { ProjectService } from '@trungk18/project/state/project/project.service';
 import { Observable, combineLatest } from 'rxjs';
-import { untilDestroyed, UntilDestroy } from '@ngneat/until-destroy';
-import { FilterQuery } from '@trungk18/project/state/filter/filter.query';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import * as dateFns from 'date-fns';
+import { IssueStatus, IssueStatusDisplay, JIssue } from '@trungk18/interface/issue';
+import { FilterQuery } from '@trungk18/project/state/filter/filter.query';
+import { ProjectService } from '@trungk18/project/state/project/project.service';
+import { FilterState } from '@trungk18/project/state/filter/filter.store';
 import { IssueUtil } from '@trungk18/project/utils/issue';
 
-@Component({
-  selector: '[board-dnd-list]',
-  templateUrl: './board-dnd-list.component.html',
-  styleUrls: ['./board-dnd-list.component.scss'],
-  encapsulation: ViewEncapsulation.None
-})
 @UntilDestroy()
+@Component({
+  selector: 'board-dnd-list',
+  templateUrl: './board-dnd-list.component.html',
+  styleUrls: ['./board-dnd-list.component.scss']
+})
 export class BoardDndListComponent implements OnInit {
   @Input() status: IssueStatus;
   @Input() currentUserId: string;
   @Input() issues$: Observable<JIssue[]>;
 
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   IssueStatusDisplay = IssueStatusDisplay;
   issues: JIssue[] = [];
 
